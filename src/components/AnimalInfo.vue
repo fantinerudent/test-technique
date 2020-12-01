@@ -5,7 +5,8 @@
     <span><u>Age</u>: {{ animal.age }}</span>
 
     <br />
-    <ul class="instructions">
+    <ul>
+      <p> Dernier rendez-vous vétérinaire: </p>
       <li>Date du rdv: {{animal.lastAppointment.date ? animal.lastAppointment.date : "veuillez préciser la date du dernier rdv" }}</li>
       <li>Type de rdv: {{animal.lastAppointment.typeOfAppointment ? animal.lastAppointment.typeOfAppointment : " veuillez donner des informations sur le dernier rdv vétérinaire" }} </li>
     </ul>

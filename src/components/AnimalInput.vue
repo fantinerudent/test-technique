@@ -132,7 +132,7 @@ export default {
     onSave() {
       setTimeout(() => {
         this.$emit("save");
-        this.$emit("message", "modifications apportées")
+        this.$emit("message", "modifications apportées");
       }, 100);
     },
     onSubmit() {
@@ -142,9 +142,12 @@ export default {
       this.animalLocal.name = e.target.value;
     },
     updateAgeAnimal(e) {
-      e.target.value > 0
-        ? (this.animalLocal.age = e.target.value)
-        : (this.errorMessage = "merci de vérifier l'âge");
+      if (e.target.value <= 0) {
+        this.errorMessage = "merci de vérifier l'âge";
+      } else {
+        this.animalLocal.age = e.target.value;
+        this.errorMessage = "";
+      }
     },
     updateSpecieAnimal(e) {
       this.animalLocal.species = e.target.value;

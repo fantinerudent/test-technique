@@ -1,30 +1,24 @@
 <template>
   <div class="animal-list">
-      <p class="instructions">
-          // TODO: utiliser display: grid pour afficher 2 animal-card sur chaque ligne
-      </p>
     <animal-card v-for="animal in animals" :key="animal.id" :animal="animal" />
   </div>
 </template>
 
 <script>
-import AnimalCard from './AnimalCard'
+import AnimalCard from "./AnimalCard";
 export default {
   components: { AnimalCard },
   computed: {
     animals: function () {
-      return this.$store.getters['animals/getAllAnimals']
-    }
-  }
-
-
-}
+      return this.$store.getters["animals/getAllAnimals"];
+    },
+  },
+};
 </script>
 
 <style scoped>
 .animal-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 </style>
