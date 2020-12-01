@@ -17,6 +17,5 @@ export default class AnimalModel {
       date: dateVetoAppointment,
       typeOfAppointment: typeLastVetoAppointment,
     });
-    // TODO: ajouter `this.lastAppointement` de type AppointementModel
   }
 }
